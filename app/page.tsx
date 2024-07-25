@@ -7,6 +7,7 @@ import {
   ServerCogIcon,
   ZapIcon,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const features = [
@@ -37,7 +38,7 @@ const features = [
   {
     name: "Cloud Backup",
     description:
-      "Rest assured knowing vour documents are safely backed up on the cloud. protected from loss or damage.",
+      "Rest assured knowing your documents are safely backed up on the cloud protected from loss or damage.",
     icon: ServerCogIcon,
   },
   {
@@ -55,7 +56,7 @@ export default function Home() {
         <div className="flex flex-col justify-center items-center max-w-7xl mx-auto px-6 lg:px-8">
           <div className="mx-auto max-w-2xl sm:text-center">
             <h2 className="text-base font-semibold leading-7 text-indigo-600">
-              Your Interactive document companion
+              Your Interactive Document Companion
             </h2>
             <p className="mt-2 text-3xl sm:text-6xl font-bold tracking-tight text-gray-900">
               Transform your PDFs into Interactive Conversation
@@ -75,6 +76,35 @@ export default function Home() {
           <Button asChild className="mt-10">
             <Link href="/dashboard">Get Started</Link>
           </Button>
+        </div>
+        <div className="relative overflow-hidden pt-16">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <Image
+              alt="App Image"
+              src="https://i.imgur.com/VciRSTI.jpeg"
+              width={2432}
+              height={1442}
+              className="mb-[-0%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
+            />
+            <div aria-hidden="true" className="relative">
+              <div className="absolute bottom-0 -inset-x-32 bg-gradient-to-t from-white/95 pt-[5%]" />
+            </div>
+          </div>
+        </div>
+        <div className="mx-auto max-w-7xl mt-16 px-6 sm:mt-20 md:mt-24 lg:px-8">
+          <dl className="mx-auto grid max-w-2xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10 text-base leading-7 text-gray-600 lg:mx-0 lg:max-w-none lg:gap-x-8 lg:gap-y-16">
+            {features.map((feature) => (
+              <div key={feature.name} className="relative pl-9">
+                <dt className="inline font-semibold text-gray-900">
+                  <feature.icon
+                    aria-hidden="true"
+                    className="absolute left-1 top-1 h-5 w-5 text-indigo-600"
+                  />
+                </dt>
+                <dd>{feature.description}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </div>
     </main>
