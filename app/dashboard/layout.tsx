@@ -1,4 +1,4 @@
-import Header from "@/Header";
+import Header from "../../components/Header";
 import { ClerkLoaded } from "@clerk/nextjs";
 import React from "react";
 
